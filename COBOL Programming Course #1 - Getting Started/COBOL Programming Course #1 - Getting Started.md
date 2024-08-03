@@ -30,9 +30,8 @@ Zowe Explorer is an open-source extension for VS Code that lets developers and s
 - **Using Zowe Explorer**
 - **Profiles in Zowe Explorer**
      - **Secure Credentials**
-     - **Creating a New Profile**
+     - **Creating a Team Configuration File**
      - **Editing Profiles**
-     - **Deleting Profiles**
 - **Summary**
 
 ## Introduction to Zowe Explorer
@@ -101,174 +100,61 @@ Zowe Explorer has a built-in Secure Credential Store. This enables you to encryp
 To enable this feature, follow these steps:
 
 1. Click the **Gear Icon** at the bottom left and select **Settings**
-2. Click **User Settings** > **Extensions** > **Zowe Explorer Settings**
-   Look for the **Zowe Security: Credential Key** field
+2. Click **User Settings** > **Extensions** > **Zowe Explorer**
+3. Look for the **Zowe Security: Check For Custom Credential Managers and Secure Credentials Enabled** field
 
 ![](Images/code4z/code4z-img6.png)
 
-3. Type **Zowe-Plugin** in the text box. This will trigger the Built-in Secure Credential Store.
-
-Alternatively, to enable this feature by editing settings.json, hover over the gear icon and click "Copy Setting as JSON".
-You can then paste that to settings.json and update the value to Zowe Plugin.
-
-![](Images/code4z/code4z-img7.png)
-
-Note: If you are using Zowe CLI and you’ve installed the Secure-Credential-Store Plugin, the steps to activate it will still be the same.
-
-### Creating a New Profile
+### Creating a Team Configuration File
 
 Follow these steps:
 
-1. Navigate to the Zowe Explorer tree on the right side and look for the + sign.
+1. Navigate to the Zowe Explorer tree and check if you already have a zosmf team configuration file.
 
 ![](Images/code4z/code4z-img8.png)
 
-2. Click on the + sign.
-A dialog box will appear and ask if you want to "Create a New Connection to z/OS".
+2. If you don't have one, click on the + sign. A dialog box will appear and ask if you want to “Create a New Team Configuration File”.
 
 3. Press enter or click on that selection.
 
 ![](Images/code4z/code4z-img9.png)
 
-4. Enter a Profile name in the "Connection Name" field.
+4. You can initialize the config file either in the Zowe home directory or in the current working directory.
 
 ![](Images/code4z/code4z-img10.png)
 
-5. Enter the URL and Port that you received by email when you registered for the COBOL Course. The connection information that you need has the title of "IP address for VSCode extension".
-
-![](Images/code4z/code4z-img11.png)
-
-6. Enter your Username. This is also included in the email.
-
-![](Images/code4z/code4z-img12-18.png)
-
-Note: You can leave this blank if you do not want to save your credentials in your machine. You will be prompted for your username once you start using Zowe Explorer.
-
-7. Enter your Password.
-
-![](Images/code4z/code4z-img13-19.png)
-
-Note: You can leave this blank if you do not want to save your credentials in your machine. You will be prompted for your username once you start using Zowe Explorer.
-
-8. Select True/False if you want to accept or reject Self-Signed Certificates. For this course, please select false.
-
-![](Images/code4z/code4z-img14-20.png)
-
-9. Enter the base path for your API mediation layer instance. For this course, please leave it empty and press **Enter** to continue
-
-![](Images/image073-1.png)
-
-10. Enter the protocol used for the connection. For this course, please leave the default ("HTTPS") and press **Enter** to continue.
-
-![](Images/image073-2.png)
-
-11. Enter the encoding used for the download and upload of z/OS data sets and USS files. For this course, please leave it empty and press **Enter** to continue.
-
-![](Images/image073-3.png)
-
-12. Enter the maximum waiting time for a response. For this course, please leave it empty and press **Enter** to continue.
-
-![](Images/image073-4.png)
-
-If you are successful, you will receive this informational message:
-
-![](Images/code4z/code4z-img15.png)
-
 ### Editing Profiles
 
-The Zowe Explorer v1.5.0 release introduces profile editing. This allows you to revise your existing profile information and continue using Zowe Explorer.
+The Zowe Explorer v3.0 enables users to edit their profiles, allowing them to update their existing profile information and continue using Zowe Explorer.
 
 Follow these steps:
 
-1. Add your profile to any of the Zowe Explorer Trees.
-2. Right-click on the profile you want to edit 
-3. from the dropdown choose **Update Profile**. A dialog box opens displaying the current information in your profile, which you can edit as required.
+1. Right-click on the Team Configuration File you want to edit.
+2. from the dropdown choose **Manage Profile**
 
 ![](Images/code4z/code4z-img16.png)
 
-3. Edit the URL information if changes are required, or enter to confirm the information is still correct.
+3. A dialog box opens, displaying a list of available profile modifications.
 
 ![](Images/code4z/code4z-img11.png)
 
-4. Edit your Username.
+4. Click on Edit Profile. Now you will be getting the zowe.config.json file.
+
+![](Images/code4z/code4z-img11-1.png)
+
+5. Ensure you are connected to the correct host: 204.90.115.200, and set 'rejectUnauthorized' to false for a successful connection.
+
+![](Images/code4z/code4z-img11-2.png)
+
+6. Click on Update Credentials. Enter your username and password.
 
 ![](Images/code4z/code4z-img12-18.png)
 
-Note: You can leave this blank if you do not want to save your credentials in your machine. You will be prompted for your username once you start using Zowe Explorer.
-
-5. Edit your Password.
-
 ![](Images/code4z/code4z-img13-19.png)
-
-Note: You can leave this blank if you do not want to save your credentials in your machine. You will be prompted for your username once you start using Zowe Explorer.
-
-6. Edit your authorized connections
-
-![](Images/code4z/code4z-img14-20.png)
-
-7. Edit your API base path
-
-![](Images/image073-1.png)
-
-8. Edit the connection protocol
-
-![](Images/image073-2.png)
-
-9. Edit the encoding 
-
-![](Images/image073-3.png)
-
-10. Edit the maximum time delay for a response 
-
-![](Images/image073-4.png)
-
-If you are successful, an information message will appear:
-
-![](Images/code4z/code4z-img21.png)
-
-### Deleting Profiles
-
-The Zowe Explorer v1.5.0 release introduces the option to delete profiles. This allows you to permanently delete unwanted profiles and clean up your files. You can delete profiles either using the command palette or in the tree.
-
-Follow these steps:
-
-Command Palette:
-
-1. Press **CTRL+SHIFT+P** or Click **View** > **Command Palette** to open the Command Palette
-
-2. Type "Zowe: Delete". This command allows you to permanently delete a profile.
-
-![](Images/code4z/code4z-img22.png)
-
-3. Select the Profile that you want to delete.
-
-![](Images/code4z/code4z-img23.png)
-
-4. Confirm that you want to delete your profile.
-
-![](Images/code4z/code4z-img24-27.png)
-
-Once confirmed, the following message is displayed:
-
-![](Images/code4z/code4z-img25-28.png)
-
-Zowe Explorer Tree:
-
-1. Right-click on the profile and select **Delete Profile**.
-
-![](Images/code4z/code4z-img26.png)
-
-2. Confirm that you want to delete your profile.
-
-![](Images/code4z/code4z-img24-27.png)
-
-3. Once confirmed, the following message is displayed:
-
-![](Images/code4z/code4z-img25-28.png)
 
 ## Summary
 
-In this section, you have learned the basic features of the Zowe Explorer extension and how to create and work with Zowe compatible `zosmf` profiles.
+In this section, you have learned the basic features of the Zowe Explorer extension and how to create and work with Zowe compatible `zosmf` profile.
 
 \newpage
 
