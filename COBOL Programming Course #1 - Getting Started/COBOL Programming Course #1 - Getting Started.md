@@ -111,7 +111,7 @@ Follow these steps:
 
 1. Navigate to the Zowe Explorer tree and check if you already have a zosmf team configuration file.
 
-![](Images/code4z/code4z-img8.png)
+<img src="Images/code4z/code4z-img8.png" width="400" />
 
 2. If you don't have one, click on the + sign. A dialog box will appear and ask if you want to “Create a New Team Configuration File”.
 
@@ -132,7 +132,7 @@ Follow these steps:
 1. Right-click on the Team Configuration File you want to edit.
 2. from the dropdown choose **Manage Profile**
 
-![](Images/code4z/code4z-img16.png)
+<img src="Images/code4z/code4z-img16.png" width="400" />
 
 3. A dialog box opens, displaying a list of available profile modifications.
 
@@ -506,7 +506,7 @@ The Zowe CLI can be leveraged for quick exploration of z/OS services as well as 
 
 ### Installing Zowe CLI
 
-The Zowe CLI is a node package and is one of over 1.2 million node packages available on the public npm registry. After Node.js and npm are installed on the client machine, the core CLI can be installed by simply issuing `npm install -g @zowe/cli@zowe-v1-lts`. There is an alternative installation method if your workstation does not have access to the public registry. More details on installing Zowe CLI and Zowe CLI plug-ins are provided in a future section titled "Installation of Zowe CLI and plug-ins". 
+The Zowe CLI is a node package and is one of over 1.2 million node packages available on the public npm registry. After Node.js and npm are installed on the client machine, the core CLI can be installed by simply issuing `npm install -g @zowe/cli@zowe-v3-lts`. There is an alternative installation method if your workstation does not have access to the public registry. More details on installing Zowe CLI and Zowe CLI plug-ins are provided in a future section titled "Installation of Zowe CLI and plug-ins". 
 
 ### Interactive Help
 
@@ -525,15 +525,11 @@ In the example above, multiple extensions are installed. The structure of comman
 Don’t have the CLI installed yet? You can also check out a copy of the web help for the core Zowe CLI and Zowe plug-ins [here](https://docs.zowe.org/stable/web_help/index.html).
 
 ### Zowe Profiles
-Zowe client technologies like Zowe CLI and the Zowe Explorer VS Code Extension store connection information in files commonly known as profiles. This provides convenience as after profiles for services are created, users do not have to constantly provide this information. For the secure storage of credentials, there is the Secure Credential Store plug-in which is discussed more in a later section titled "Installation of Zowe CLI and plug-ins". The Secure Credential Store provides a means to store creds in the operating system’s secure credential vault.
 
-When creating profiles you can also specify the `prompt*` keyword to be prompted for your username and password so they will be masked on the command line. Figure 3 shows a sample command to create a zosmf profile. This will eliminate the need to provide these details on future commands.
-
-![](Images/zowe/zowe-cli-zosmf-profile-creation-command.png)
-
-*Figure 3. Zowe CLI z/OSMF Profile Creation Command*
+Zowe client technologies like Zowe CLI and the Zowe Explorer VS Code Extension store connection information in files commonly known as profiles. This provides convenience as after profiles for services are created, users do not have to constantly provide this information.
 
 ### Interacting with z/OS Data Sets
+
 Zowe CLI provides a significant suite of z/OS data set interaction functionality. See the following figures for details on available actions and a sample list command.
 
 ![](Images/zowe/zowe-cli-zos-files-actions.png)
@@ -647,20 +643,20 @@ This section will cover the necessary steps and information to download and inst
 
 ### Install node.js
 
-1. Check for node.js installation and verify that the version number is v8 or higher.
+1. Check for node.js installation and verify that the version number is v18 or higher.
 
    Open your workstation's version of the command prompt (called Terminal on Mac OS X). Once the command prompt is open, use the command in Example 1.  to check if your workstation currently has a version of node.js installed.
 
 ```
 C:\Users\User> node -v
 
-V12.16.1    
+V20.15.1    
 ```
 *Example 1.  Node.js version*
 
-If you do not see a version number after you submit the command, you do not have node.js installed, or if it shows a version less than v8, you should continue following these instructions.  If you do see a version number and it is v8 or higher, you can move on to the section Install Java SDK.
+If you do not see a version number after you submit the command, you do not have node.js installed, or if it shows a version less than v18, you should continue following these instructions. If you do see a version number and it is v18 or higher, you can move on to the section Install Java SDK.
 
-2. If the node.js version is less than v8, or node isn't installed at all. 
+2. If the node.js version is less than v18, or node isn’t installed at all.
 
    Updating node.js to the appropriate version number is a relatively simple process because the installer takes care of most of the "heavy lifting".  All you will need to do is visit the Node.js download site, provided below and follow the download and installation instructions for your specific workstation platform.  Do this same process if you do not already have node.js installed.
 
@@ -674,24 +670,24 @@ This process will install the latest versions of Node.js and the node package ma
 
 ### Install Java SDK
 
-1. Check for Java installation and verify that the version number is v8 or higher.
+1. Check for Java installation and verify that the version number is v17 or higher.
 
-   Open your workstation's version of the command prompt, if not already open.  Once the command prompt is open, use the command in Example 2. to check if your workstation currently has a version of Java installed.  Java SDK 8 is the preferred version for these labs, however, any versions higher than that will suffice.
+   Open your workstation’s version of the command prompt, if not already open. Once the command prompt is open, use the command in Example 2. to check if your workstation currently has a version of Java installed. Java SDK 17 is the preferred version for these labs, however, any versions higher than that will suffice.
 
 ```
 C:\Users\User> java -version
 
-java version "1.8.0_241"
+java version "18.0.2.1"
 
-Java(TM) SE Runtime Environment (build 1.8.0_241-b07)
+Java(TM) SE Runtime Environment (build 18.0.2.1+1-1)
 
-Java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
+Java HotSpot(TM) 64-Bit Server VM (build 18.0.2.1+1-1, mixed mode)
 ```
 *Example 2.  Java version*
 
-If you do not see a version number after you submit the command, you do not have Java installed or if it shows a version less than v8, you should continue following these instructions.  The display format of the version number for Java is slightly different than what is displayed for node.js.  With Java, the second value in the displayed version number, i.e. the "8" in Example 2. , is the version number.  So, our example is showing Java SDK version 8.  If you do see a version number and it is v8 or higher, you can move on to the section Install VSCode.
+If you do not see a version number after you submit the command, you do not have Java installed or if it shows a version less than v17, you should continue following these instructions. The display format of the version number for Java is slightly different than what is displayed for node.js. The given example is showing Java SDK version 18. If you do see a version number and it is v17 or higher, you can move on to the section Install VSCode.
 
-2. If your version of Java displayed is less than v8, you need to uninstall the current version on your workstation and reinstall the correct version.  Follow the link below to uninstall instructions that represent your workstation operating system (OS).
+2. If your version of Java displayed is less than v17, you need to uninstall the current version on your workstation and reinstall the correct version. Follow the link below to uninstall instructions that represent your workstation operating system (OS).
 
 -Linux:
 
@@ -706,13 +702,11 @@ If you do not see a version number after you submit the command, you do not have
 [`https://www.java.com/en/download/help/uninstall_java.xml` ](https://www.java.com/en/download/help/uninstall_java.xml)
 
 
-3. Once Java is uninstalled from your workstation, you can click the Java JDK 8 download link below and follow the installation instructions for your specific OS.
+3. Once Java is uninstalled from your workstation, you can click the Java JDK 17 download link below and follow the installation instructions for your specific OS.
 
 [`https://www.oracle.com/java/technologies/javase-jdk8-downloads.html` ](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
 
 4. Verify the installation and proper version number as shown in Example 2.
-
-**Note**: You will be prompted to register a new Oracle account in order to download the installation file, please do so.  If you have an existing account, you may use that to log in and continue.
 
 ## Install VSCode
 
@@ -802,7 +796,7 @@ This chapter covers all aspects of the download and installation of Zowe CLI and
 
 ## Install prerequisites - Node.js
 
-Before installing Zowe CLI, please ensure an LTS version of Node v8.0 or higher is installed. Please refer back to the section titled "Install Node.js" if you have not already completed it. Please also verify that you have a version of Node Package Manager (npm) that is compatible with your version of Node.js. For a list of compatible versions, see [https://nodejs.org/en/download/releases/](https://nodejs.org/en/download/releases/). npm is included with the Node.js installation. Issue the command `npm --version` to view the version of npm that is installed.
+Before installing Zowe CLI, please ensure an LTS version of Node v18.0 or higher is installed. Please refer back to the section titled "Install Node.js" if you have not already completed it. Please also verify that you have a version of Node Package Manager (npm) that is compatible with your version of Node.js. For a list of compatible versions, see [https://nodejs.org/en/download/releases/](https://nodejs.org/en/download/releases/). npm is included with the Node.js installation. Issue the command `npm --version` to view the version of npm that is installed.
 
 ## Install Zowe CLI
 There are two recommended methods for installing the Zowe CLI. If you have access to the public npm registry from your workstation, we recommend using that installation method as pulling updates is seamless. If you do not have access to this registry, we recommend downloading the package from zowe.org and installing it from the bundled package.
@@ -811,7 +805,7 @@ There are two recommended methods for installing the Zowe CLI. If you have acces
 Issue the following command in your terminal (e.g. Command Prompt or if you are using VS Code, Terminal -> New Terminal):
 
 ```
-npm install -g @zowe/cli@zowe-v1-lts
+npm install -g @zowe/cli@zowe -v3-lts
 ```
 
 If the command returns an EACCESS error, refer to [Resolving EACCESS permissions errors when installing packages globally](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) in the npm documentation.
@@ -824,12 +818,6 @@ If running Linux, please run the following command for your Linux distribution:
 - Debian/Ubuntu: `sudo apt-get install libsecret-1-dev`
 - Red Hat-based: `sudo yum install libsecret-devel`
 - Arch Linux: `sudo pacman -S libsecret`
-
-To install the Secure Credential Store Plug-in for Zowe CLI, issue the following command:
-
-```
-zowe plugins install @zowe/secure-credential-store-for-zowe-cli@zowe-v1-lts
-```
 
 User profiles, which contain connection information for interacting with various z/OS services, created after installing the plug-in will automatically store your credentials securely.
 
@@ -859,12 +847,6 @@ If running Linux, please run the following command for your Linux distribution:
 - Red Hat-based: `sudo yum install libsecret-devel`
 - Arch Linux: `sudo pacman -S libsecret`
 
-To install the Secure Credential Store Plug-in for Zowe CLI, issue the following command from where you unzipped the core CLI package contents:
-
-```
-zowe plugins install secure-credential-store-for-zowe-cli.tgz
-```
-
 User profiles, which contain connection information for interacting with various z/OS services, created after installing the plug-in will automatically store your credentials securely.
 
 To securely store credentials in existing user profiles (profiles that you created prior to installing the SCS plug-in), issue the following command:
@@ -877,7 +859,7 @@ zowe scs update
 Zowe CLI is an extendable technology that can be enhanced by installing plug-ins. Zowe offers a number of [plug-ins](https://docs.zowe.org/stable/user-guide/cli-extending.html). At the time of this writing, these include plug-ins for [CICS](https://www.npmjs.com/package/@zowe/cics-for-zowe-cli), [Db2](https://www.npmjs.com/package/@zowe/db2-for-zowe-cli), [FTP](https://www.npmjs.com/package/@zowe/zos-ftp-for-zowe-cli), [IMS](https://www.npmjs.com/package/@zowe/ims-for-zowe-cli), and [MQ](https://www.npmjs.com/package/@zowe/mq-for-zowe-cli). There are also many vendor plug-ins, many of which are available on the [public registry](https://www.npmjs.com/search?q=zowe-cli). At the time of this writing, these include plug-ins for [CA Endevor](https://www.npmjs.com/package/@broadcom/endevor-for-zowe-cli), [CA Endevor Bridge for Git](https://www.npmjs.com/package/@broadcom/endevor-bridge-for-git-for-zowe-cli), [CA File Master Plus](https://www.npmjs.com/package/@broadcom/file-master-plus-for-zowe-cli), [CA OPS/MVS](https://www.npmjs.com/package/@broadcom/ops-for-zowe-cli), [CA View](https://www.npmjs.com/package/@broadcom/caview-for-zowe-cli), [IBM CICS Bundle Generation and Deployment](https://www.npmjs.com/package/zowe-cli-cics-deploy-plugin), and [IBM z/OS Connect EE](https://www.npmjs.com/package/@zosconnect/zosconnect-zowe-cli).
 
 ### Install from Public npm Registry 
-To install a Zowe CLI plug-in from the registry, simply locate the plug-in you wish to install, e.g. `@zowe/cics-for-zowe-cli`, find the distribution tag for the distribution you want to install, e.g. `zowe-v1-lts`, and issue the following command: 
+To install a Zowe CLI plug-in from the registry, simply locate the plug-in you wish to install, e.g. `@zowe/cics-for-zowe-cli`, find the distribution tag for the distribution you want to install, e.g. `zowe-v3-lts`, and issue the following command: 
 
 ```
 zowe plugins install <name>@<distTag>
@@ -886,19 +868,19 @@ zowe plugins install <name>@<distTag>
 For example,
 
 ```
-zowe plugins install @zowe/cics-for-zowe-cli@zowe-v1-lts
+zowe plugins install @zowe/cics-for-zowe-cli@zowe-v3-lts
 ```
 
 Multiple plug-ins can be installed in a single command. For example, to install all Zowe CLI plug-ins available from the Zowe organization, you could issue:
 
 ```{.bash}
-zowe plugins install @zowe/cics-for-zowe-cli@zowe-v1-lts @zowe/ims-for-zowe-cli@zowe-v1-lts @zowe/mq-for-zowe-cli@zowe-v1-lts @zowe/zos-ftp-for-zowe-cli@zowe-v1-lts @zowe/db2-for-zowe-cli@zowe-v1-lts
+zowe plugins install @zowe/cics-for-zowe-cli@zowe-v3-lts @zowe/ims-for-zowe-cli@zowe-v3-lts @zowe/mq-for-zowe-cli@zowe-v3-lts @zowe/zos-ftp-for-zowe-cli@zowe-v3-lts @zowe/db2-for-zowe-cli@zowe-v3-lts
 ```
 
 Vendor plug-ins on the registry are installed in the same way. For example, to install the CA Endevor plug-in, you would issue
 
 ```
-zowe plugins install @broadcom/endevor-for-zowe-cli@zowe-v1-lts
+zowe plugins install @broadcom/endevor-for-zowe-cli@zowe-v3-lts
 ```
 
 ### Install from Bundled Package
